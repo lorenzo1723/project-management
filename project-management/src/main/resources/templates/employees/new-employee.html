@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html
+	xmlns:th="http://www.thymeleaf.org"
+>
+	<head th:replace="layouts :: head"></head>
+	
+	<body>
+		<nav th:replace="layouts :: navbar"></nav>
+		
+		<div class="container" style="margin-top: 50px;">
+			<div class="row">
+				<div class="col text-center">
+					<hr>
+					<h2 class="col text-center" >Add Employee</h2>
+					<hr style="margin-bottom: 50px">
+					
+					<form class="form-group" action="/employees/save" method="POST" th:object="${employee}">
+						<p><input placeholder="First name" class="form-control" type="text" th:field="${employee.firstName}" /></p>
+						<p><input placeholder="Last name" class="form-control" type="text" th:field="${employee.lastName}" /></p>
+						<p><input placeholder="Email address" class="form-control" type="text" th:field="${employee.email}" /></p>
+						
+						<button class="btn btn-dark btn-md" type="submit">Add employee</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
